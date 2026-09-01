@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "policy": "No copyrighted audio is stored in the repository.",
+  "cases": [
+    {"id": "original", "recording": "fixture-a", "transformations": []},
+    {"id": "slowed", "recording": "fixture-a", "transformations": ["slowed"]},
+    {"id": "sped-up", "recording": "fixture-a", "transformations": ["sped-up"]},
+    {"id": "slowed-reverb", "recording": "fixture-a", "transformations": ["slowed", "reverb"]},
+    {"id": "sped-up-reverb", "recording": "fixture-a", "transformations": ["sped-up", "reverb"]},
+    {"id": "pitch-shifted", "recording": "fixture-a", "transformations": ["pitch-shifted"]},
+    {"id": "unrelated", "recording": "fixture-b", "transformations": []},
+    {"id": "ambiguous", "recording": "ambiguous", "transformations": []}
+  ]
+}
