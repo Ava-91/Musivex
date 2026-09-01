@@ -1,13 +1,29 @@
 # Troubleshooting
 
-## No files are found
-Check the path and ensure the extension is supported.
+## `musivex` is not found
 
-## A match is uncertain
-Use preview/review mode instead of writing tags automatically. Lowering confidence thresholds can increase false positives.
+Install the project in editable mode from the repository root:
 
-## A provider fails
-Check provider configuration, credentials, rate limits, and network access. Core tests do not require a live provider.
+```bash
+python -m pip install -e .
+```
 
-## A write is refused
-Check whether the target container supports the requested metadata field and whether dry-run mode is enabled.
+## Tests fail during collection
+
+Check that the development environment is using the project's supported Python version and that the package was installed correctly. Run:
+
+```bash
+python -m pytest
+```
+
+## A file is skipped
+
+Check whether its extension is supported and whether the file can be read. One problematic file should not prevent a library scan from continuing.
+
+## Recognition is uncertain
+
+Treat low-confidence or ambiguous matches as review candidates. Do not force metadata onto a file just to make the library look complete.
+
+## CI fails
+
+Reproduce the failing command locally where possible. Check tests first, then lint and type checking. Keep CI independent of live provider services and private credentials.
