@@ -1,7 +1,39 @@
 # Quick start
 
-Install Musivex in an editable environment with `pip install -e .`.
+## Install
 
-Scan a library with `musivex scan <path>` and preview changes before writing tags. Keep dry-run enabled until matches have been reviewed.
+Musivex currently uses a standard Python `src/` layout.
 
-Provider-backed identification may require additional configuration; core scanning and metadata operations remain local.
+```bash
+python -m pip install -e .
+```
+
+## Verify the installation
+
+```bash
+musivex --help
+python -m pytest
+```
+
+## Scan a library
+
+```bash
+musivex scan ./Music
+```
+
+Disable recursive traversal when needed:
+
+```bash
+musivex scan ./Music --no-recursive
+```
+
+## Preview a file
+
+```bash
+musivex preview ./Music/track.mp3
+musivex preview ./Music/track.mp3 --json
+```
+
+## Tagging
+
+The current tagging command is intentionally safety-oriented. Recognition-backed writes are still being developed, so preview and dry-run behavior should be preferred while the provider and rollback pipeline evolves.
