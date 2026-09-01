@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "musivex"
+version = "0.1.0"
+description = "Automatic music metadata enrichment and transformation-aware song recognition."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Ava-91" }]
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.scripts]
+musivex = "musivex.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
