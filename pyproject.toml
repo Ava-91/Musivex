@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Ava-91" }]
 license = { file = "LICENSE" }
-dependencies = []
+dependencies = ["mutagen>=1.47"]
 
 [project.scripts]
 musivex = "musivex.cli:main"
