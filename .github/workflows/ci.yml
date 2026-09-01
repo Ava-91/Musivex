@@ -16,6 +16,6 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: pip install -e .
       - run: pip install pytest ruff mypy
-      - run: pytest
+      - run: PYTHONPATH=. pytest
       - run: ruff check .
       - run: mypy src
