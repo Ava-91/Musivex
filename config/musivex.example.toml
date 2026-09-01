@@ -1,0 +1,8 @@
+# Copy this file to a user configuration location and adjust values.
+confidence_threshold = 0.85
+dry_run = true
+embed_artwork = true
+backup_before_write = true
+naming_template = "{title}"
+provider = "auto"
+cache_dir = "~/.cache/musivex"
