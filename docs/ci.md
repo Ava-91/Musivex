@@ -1,5 +1,21 @@
 # Continuous integration
 
-Every push and pull request runs the test suite across Python 3.11, 3.12, and 3.13. The workflow installs Musivex, runs pytest, checks Ruff, and runs mypy against `src`.
+Musivex runs automated checks for pull requests so regressions are caught before changes are merged.
 
-Provider credentials and live network access are not required for the normal CI path.
+## Current checks
+
+The CI workflow installs the project and runs:
+
+```bash
+python -m pytest
+ruff check .
+mypy src
+```
+
+The test matrix covers the Python versions configured by the repository workflow.
+
+## Keeping CI deterministic
+
+Normal CI should not require proprietary audio, personal files, API credentials, or live external provider responses. Provider-dependent behavior should be mocked or isolated behind deterministic tests.
+
+A failing CI job should be fixed before merging unless the failure is explicitly understood and documented.
