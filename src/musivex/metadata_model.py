@@ -1,6 +1,6 @@
 """Normalized metadata types."""
 
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from typing import Any
 
 
@@ -35,7 +35,6 @@ class Metadata:
     transformation: Transformation = field(default_factory=Transformation)
 
     def as_dict(self) -> dict[str, Any]:
-        result = {k: v for k, v in self.__dict__.items() if k != "artwork"}
+        result = asdict(self)
         result["artwork"] = None if self.artwork is None else {"mime_type": self.artwork.mime_type}
-        result["transformation"] = self.transformation.__dict__
         return result
